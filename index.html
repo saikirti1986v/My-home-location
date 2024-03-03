@@ -1,14 +1,10 @@
-<html>
-<dody>
-  <div style="text-align: center;">
-  <button onclick="share()">Share home location</button>
-</div>
+<button onclick="share()" style="margin: 0 auto; display: block;">Share Home Location</button>
 
 <script>
 function share() {
   if (navigator.share) {
     navigator.share({
-      title: 'sharing home location',
+      title: 'Sharing Home Location',
       url: 'https://maps.app.goo.gl/ghsKGp3Xi11etaaR6'
     })
     .then(() => console.log('Shared successfully!'))
@@ -19,3 +15,11 @@ function share() {
   }
 }
 </script>
+
+<style>
+@media only screen and (max-width: 800px) {
+  button {
+    width: 100%; /* Set width to 100% for mobile */
+  }
+}
+</style>
