@@ -1,0 +1,21 @@
+<html>
+<dody>
+  <div style="text-align: center;">
+  <button onclick="share()">Share home location</button>
+</div>
+
+<script>
+function share() {
+  if (navigator.share) {
+    navigator.share({
+      title: 'sharing home location',
+      url: 'https://maps.app.goo.gl/ghsKGp3Xi11etaaR6'
+    })
+    .then(() => console.log('Shared successfully!'))
+    .catch(error => console.error('Error sharing:', error));
+  } else {
+    // Provide fallback behavior for unsupported browsers
+    console.log('Sharing is not supported in your browser.');
+  }
+}
+</script>
